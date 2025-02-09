@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>EduManager - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded shadow-md w-96">
+      <h1 class="text-2xl font-bold mb-6 text-center">EduManager Login</h1>
+      <form id="loginForm">
+        <div class="mb-4">
+          <label class="block text-gray-700">Usuário:</label>
+          <input type="text" id="username" class="w-full p-2 border border-gray-300 rounded" placeholder="Digite seu usuário">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Senha:</label>
+          <input type="password" id="password" class="w-full p-2 border border-gray-300 rounded" placeholder="Digite sua senha">
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Entrar</button>
+      </form>
+      <p class="mt-4 text-center"><a href="admin.html" class="text-blue-500 hover:underline">Admin</a></p>
+      <p id="errorMessage" class="text-red-500 text-center mt-2"></p>
+    </div>
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        if(username === 'admin' && password === 'greb2025'){
+          window.location.href = 'admin.html';
+        } else {
+          document.getElementById('errorMessage').innerText = "Credenciais inválidas!";
+        }
+      });
+    </script>
+  </body>
+</html>
